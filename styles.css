@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #222
+}
+.card {
+  width: 90%;
+  max-width: 470px;
+  background: linear-gradient(135deg, #00feba, #5b548a);
+  color: #fff;
+  margin: 100px auto 0;
+  border-radius: 20px;
+  padding: 40px 35px;
+  text-align: center;
+}
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.search input {
+    
+    border-radius: 30px;
+    border: 0;
+    outline: 0;
+    background-color: #ebfffc;
+    color:#555;
+    padding:10px 25px;
+    height: 60px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+}
+.search button {
+    width: 40px;        /* size of the button */
+    height: 40px;       /* size of the button */
+    border-radius: 50%; /* shape: circle (change value if you want another shape) */
+}
+.search button img {
+    width: 16px;
+}
+
+.weather-icon {
+    width: 170px;
+    margin-top: 30px ;
+}
+.weather h1 {
+    font-size: 80px;
+    font-weight: 500;
+}
+.weather h2 {
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+.details {
+    display: flex;
+    align-items: center ;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+.col img {
+    width: 40px;
+    margin-right: 10px;
+}
+.humidity, .wind {
+    font-size: 28px;
+    margin-top: -6 px;
+
+}
+.weather {
+    display: none;
+}
+.error{
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
+.loc-btn {
+    position: relative;
+    left: 20px;                 /* move towards left */
+    margin-top: 40px;
+
+    width: auto;
+    padding: 12px 22px;
+
+    background: linear-gradient(135deg, #4a90e2, #357ABD);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.loc-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #5aa5ff, #437fd8);
+}
+
+/* Button click */
+.loc-btn:active {
+    transform: scale(0.97);
+}
+.loc-info {
+    position: relative;
+    left: 22px;               /* align with button */
+    margin-top: 6px;
+    font-size: 13px;
+    color: #ddd;
+    opacity: 0.9;
+    font-style: italic;
+}
