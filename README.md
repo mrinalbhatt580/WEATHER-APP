@@ -1,113 +1,172 @@
-# WEATHER-APP
-THIS APP WILL GIVE YOU LIVE WEATHER OF WHICHEVER CITY YOU WANT IN REAL TIME.
+🌤️ Weather App (Frontend)
 
-🌤️ Weather App
+A modern, responsive Weather Application built using HTML, CSS, and JavaScript, featuring:
 
-A clean, responsive weather application built using HTML, CSS, and JavaScript, powered by the OpenWeatherMap API.
-The app allows users to search weather by city name and also fetch weather using current location (Geolocation API).
+✔ Real-time weather data
+✔ 5-day forecast
+✔ Day/Night dynamic UI
+✔ Geolocation-based weather
+✔ Smooth UI animations & glassmorphism design
+
+This project was created as part of an internship frontend assignment.
+
+🚀 Demo
+
+👉 Host the project using GitHub Pages and place the link here.
 
 📌 Features
-🔍 City-Based Weather Search
+🔍 Search Weather by City
 
-Users can enter any city name to instantly view:
+Fetches weather using OpenWeather API
 
-Temperature
-
-City name
-
-Humidity
-
-Wind speed
-
-Relevant weather icon based on condition
-(From logic in updateUI() where weather mapping is implemented) 
-
+Displays temperature, humidity, wind speed, sunrise, sunset
 
 📍 Use My Location
 
-With one click, the app:
+Auto-detects your current position using Geolocation API
 
-Retrieves the user’s latitude & longitude via the Geolocation API
+Fetches local weather instantly
+(Uses logic from script.js geolocation function) 
 
-Fetches weather data for the current coordinates
-(Handled in showPosition() and locBtn event listener)
+31afa578-48de-4d6e-a060-a949204…
+
+🌗 Automatic Day/Night Mode
+
+Background gradient changes based on local sunrise/sunset time
+
+Weather icons change for day & night
+(Handled inside applyDayNightMode() and icon maps)
 
 
-⚡ Real-Time Status Messages
+31afa578-48de-4d6e-a060-a949204…
 
-App includes:
+📅 5-Day Weather Forecast
 
-Loading state
+Extracts data for 12:00 PM each day
 
-Error handling
+Displays weekday, icon, and temperature
+(logic from fetchForecast())
 
-Invalid city name detection
-(See checkWeather() for validation and UI state changes) 
 
-🎨 Modern UI
+31afa578-48de-4d6e-a060-a949204…
 
-A smooth, gradient-based UI with:
+✨ Modern UI
 
-Responsive design
-
-Rounded inputs
+Glassmorphism card
 
 Hover effects
 
-Professional weather card design
-(Defined in styles.css) 
-
-🚀 Tech Used
-
-HTML5 — App layout and component structure 
-CSS3 — Full styling for card, button, layout, responsiveness 
-JavaScript (ES6) — API calls, UI updates, geolocation logic, event handling 
-OpenWeatherMap API — Weather data provider
-Geolocation API — Get live user location
+Smooth transitions & fade-in animations
+(CSS from styles.css)
 
 
-🧠 How It Works
-1️⃣ User enters a city → checkWeather() is triggered
+00d3ca18-5159-4d7a-84d1-60d18cc…
 
-Validates input
+🛠️ Tech Stack
+Technology	Usage
+HTML5	Page structure
+CSS3	UI design, glassmorphism, animations
+JavaScript (Vanilla JS)	Fetch API, DOM updates, geolocation
+OpenWeather API	Weather & forecast data
+📡 API Used
+OpenWeather API
 
-Shows loading
+Endpoints used in project:
 
-Fetches data from OpenWeatherMap
+Current Weather:
+https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={apikey}
 
-Updates UI via updateUI() 
+Forecast (5 day):
+https://api.openweathermap.org/data/2.5/forecast?q={city}&units=metric&appid={apikey}
 
-ae57e66b-e204-4a1e-933b-a1daa42…
+Geolocation Weather:
+https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&units=metric&appid={apikey}
 
-2️⃣ User clicks “Use My Location”
+📁 Project Structure
+/
+│── index.html
+│── styles.css
+│── script.js
+└── /images
+      ├── clear.png
+      ├── clouds.png
+      ├── rain.png
+      ├── drizzle.png
+      ├── mist.png
+      ├── snow.png
+      ├── moon_clear.png
+      ├── moon_clouds.png
+      ├── moon_rain.png
+      └── ...other icons
 
-Browser retrieves coordinates
+💡 How It Works
+1️⃣ User enters a city
 
-Weather is fetched using latitude & longitude
-
-Smoothly updates the UI
-
-3️⃣ Weather Icons
-
-Weather conditions like clouds, rain, clear, etc. are mapped to icons via an icon map object.
-
-
-
-🛠️ Setup & Usage
-
-Clone the repository:
-
-git clone .....
-
-
-Open the project folder:
-
-cd weather-app
+→ checkWeather() fetches data & updates UI
 
 
-Replace the OpenWeatherMap API Key in script.js:
+31afa578-48de-4d6e-a060-a949204…
+
+2️⃣ If invalid city → show error
+
+→ Handled by showError()
+
+
+31afa578-48de-4d6e-a060-a949204…
+
+3️⃣ On success
+
+Temperature, humidity, wind
+
+Sunrise, sunset (converted from UNIX time)
+
+Weather icons
+
+Day/Night theme
+→ All updated inside updateUI()
+
+
+31afa578-48de-4d6e-a060-a949204…
+
+4️⃣ Fetch 5-day forecast
+
+→ Uses filtered 12 PM entries from OpenWeather
+
+
+31afa578-48de-4d6e-a060-a949204…
+
+📸 Screenshots (Optional)
+
+Add screenshots here after deploying.
+
+⚙️ Setup Instructions
+🔧 1. Clone the repo
+git clone https://github.com/your-username/weather-app.git
+
+🔧 2. Open the project
+
+Just open index.html in any browser.
+
+🔧 3. Add your API key
+
+Inside script.js:
 
 const apikey = "YOUR_API_KEY_HERE";
 
+📌 Future Improvements
 
-Open index.html in your browser.
+Add hourly forecast
+
+Add temperature unit toggle (°C ↔ °F)
+
+Add weather alerts
+
+PWA support (Install as app)
+
+🤝 Contributing
+
+Pull requests are welcome!
+
+📄 License
+
+This project is open-source under the MIT License.
