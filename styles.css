@@ -1,3 +1,18 @@
+body {
+    transition: background 0.8s ease, color 0.3s ease;
+}
+
+/* Day Mode (Clear iOS Sky Gradient) */
+body.day {
+    background: linear-gradient(180deg, #87CEFA, #4A90E2);
+    color: #fff;
+}
+
+/* Night Mode (iOS Starry Sky Gradient) */
+body.night {
+    background: linear-gradient(180deg, #0F2027, #203A43, #2C5364);
+    color: #fff;
+}
 *{
     margin: 0;
     padding: 0;
@@ -8,15 +23,25 @@ body{
     background: #222
 }
 .card {
-  width: 90%;
-  max-width: 470px;
-  background: linear-gradient(135deg, #00feba, #5b548a);
-  color: #fff;
-  margin: 100px auto 0;
-  border-radius: 20px;
-  padding: 40px 35px;
-  text-align: center;
+    width: 90%;
+    max-width: 480px;
+    margin: 100px auto 0;
+    padding: 40px 35px;
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+
+    color: #fff;
+    text-align: center;
+
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    transition: 0.4s ease;
 }
+body.night .card { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.18); }
+
 .search {
     width: 100%;
     display: flex;
@@ -47,12 +72,17 @@ body{
 }
 
 .weather-icon {
-    width: 170px;
-    margin-top: 30px ;
+    width: 190px;
+    margin-top: -10px;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.25));
+    animation: fadeIn 0.7s ease;
 }
 .weather h1 {
-    font-size: 80px;
-    font-weight: 500;
+    font-size: 90px;
+    font-weight: 300;
+    letter-spacing: -3px;
+    margin-bottom: 10px;
+    animation: fadeIn 0.6s ease;
 }
 .weather h2 {
     font-size: 45px;
@@ -132,4 +162,68 @@ body{
     color: #ddd;
     opacity: 0.9;
     font-style: italic;
+}
+body {
+    transition: background 0.8s ease-in-out;
+}
+.forecast-title {
+    margin-top: 40px;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.forecast {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.forecast-day {
+    flex: 1;
+    padding: 15px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.forecast-day:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.forecast-day img {
+    width: 45px;
+    margin-bottom: 8px;
+}
+
+.forecast-day h4 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.forecast-day p {
+    font-size: 14px;
+    font-weight: 500;
+}
+.sunrise, .sunset {
+    font-size: 20px;
+    margin-top: -4px;
+}
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
